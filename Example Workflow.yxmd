@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="90" y="54" />
+        <Position x="54" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -16,30 +16,27 @@
           <DefaultAnnotationText>2016PPData.yxdb</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Transaction unique identifier" size="38" source="File: D:\Downloads\pp-complete.csv" type="String" />
-            <Field name="Price" source="File: D:\Downloads\pp-complete.csv" type="Int32" />
-            <Field name="Date of Transfer" source="File: D:\Downloads\pp-complete.csv" type="Date" />
-            <Field name="Postcode" size="8" source="File: D:\Downloads\pp-complete.csv" type="String" />
-            <Field name="Property Type" size="1" source="File: D:\Downloads\pp-complete.csv" type="String" />
-            <Field name="Old/New" source="Formula: [_CurrentField_]='Y'" type="Int16" />
-            <Field name="Duration" size="1" source="File: D:\Downloads\pp-complete.csv" type="String" />
-            <Field name="PAON" size="50" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
-            <Field name="SAON" size="42" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
-            <Field name="Street" size="44" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
-            <Field name="Locality" size="35" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
-            <Field name="Town/City" size="22" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
-            <Field name="District" size="28" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
-            <Field name="County" size="28" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
-            <Field name="PPDCategory Type" size="1" source="File: D:\Downloads\pp-complete.csv" type="String" />
+            <Field description="A reference number which is generated automatically recording each published sale. The number is unique and will change each time a sale is recorded." name="Transaction unique identifier" size="38" source="File: D:\Downloads\pp-complete.csv" type="String" />
+            <Field description=" Sale price stated on the transfer deed." name="Price" source="File: D:\Downloads\pp-complete.csv" type="Int32" />
+            <Field description="Date when the sale was completed, as stated on the transfer deed." name="Date of Transfer" source="File: D:\Downloads\pp-complete.csv" type="Date" />
+            <Field description="This is the postcode used at the time of the original transaction." name="Postcode" size="8" source="File: D:\Downloads\pp-complete.csv" type="String" />
             <Field description="RegEx: Parsed from Postcode" name="PostCodeArea" size="2" source="RegEx: Parsed from Postcode" type="String" />
             <Field description="RegEx: Parsed from Postcode" name="PostCodeDistrict" size="2" source="RegEx: Parsed from Postcode" type="String" />
             <Field description="RegEx: Parsed from Postcode" name="PostCodeSector" source="RegEx: Parsed from Postcode" type="Byte" />
             <Field description="RegEx: Parsed from Postcode" name="PostCodeUnit" size="2" source="RegEx: Parsed from Postcode" type="String" />
+            <Field description="D = Detached, S = Semi-Detached, T = Terraced, F = Flats/Maisonettes, O = Other" name="Property Type" size="1" source="File: D:\Downloads\pp-complete.csv" type="String" />
+            <Field description="Is it a Newly Built Property" name="NewBuild" source="Formula: [_CurrentField_]='Y'" type="Bool" />
+            <Field description="F = Freehold, L= Leasehold" name="Duration" size="1" source="File: D:\Downloads\pp-complete.csv" type="String" />
+            <Field description="Primary Addressable Object Name. Typically the house number or name" name="PAON" size="64" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
+            <Field description="Secondary Addressable Object Name." name="SAON" size="64" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
+            <Field name="Street" size="64" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
+            <Field name="Locality" size="64" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
+            <Field name="Town/City" size="32" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
+            <Field name="District" size="32" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
+            <Field name="County" size="32" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
+            <Field name="PPDCategory Type" size="1" source="File: D:\Downloads\pp-complete.csv" type="String" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -47,7 +44,7 @@
     </Node>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
-        <Position x="210" y="54" />
+        <Position x="186" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -69,7 +66,7 @@ Price - Descending</DefaultAnnotationText>
     </Node>
     <Node ToolID="4">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
-        <Position x="342" y="54" />
+        <Position x="306" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -82,8 +79,8 @@ Price - Descending</DefaultAnnotationText>
           <NumRows value="1" />
           <Expression>[Row-1:RecordID]+1</Expression>
           <GroupByFields>
-            <Field field="County" />
             <Field field="PostCodeArea" />
+            <Field field="County" />
           </GroupByFields>
         </Configuration>
         <Annotation DisplayMode="0">
@@ -96,10 +93,24 @@ Price - Descending</DefaultAnnotationText>
     </Node>
     <Node ToolID="5">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="450" y="54" />
+        <Position x="414" y="54" />
       </GuiSettings>
       <Properties>
-        <Configuration />
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_17324_03677a94501a4d0ebe26b9de07aa2875_\Engine_14844_f5851dc65158448ab2d62a92ef6783dc_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
         <Annotation DisplayMode="0">
           <Name />
           <DefaultAnnotationText />

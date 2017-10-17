@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="1">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="138" y="42" />
+        <Position x="54" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -25,9 +25,6 @@
           <DefaultAnnotationText>pp-complete.csv</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="Field_1" size="254" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
@@ -53,7 +50,7 @@
     </Node>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="138" y="162" />
+        <Position x="54" y="174" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -122,7 +119,7 @@
     </Node>
     <Node ToolID="4">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicRename.DynamicRename">
-        <Position x="270" y="54" />
+        <Position x="186" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -183,7 +180,7 @@
     </Node>
     <Node ToolID="5">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="378" y="54" />
+        <Position x="294" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -212,7 +209,7 @@
     </Node>
     <Node ToolID="6">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="666" y="54" />
+        <Position x="582" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -229,7 +226,7 @@
     </Node>
     <Node ToolID="7">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
-        <Position x="474" y="54" />
+        <Position x="390" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -265,7 +262,7 @@
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="858" y="54" />
+        <Position x="882" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -282,15 +279,12 @@
           <DefaultAnnotationText>2016PPData.yxdb</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
     </Node>
     <Node ToolID="9">
       <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
-        <Position x="570" y="54" />
+        <Position x="486" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -308,10 +302,10 @@
             <ErrorHandling>Warn</ErrorHandling>
           </ParseSimple>
           <ParseComplex>
-            <Field field="PostCodeArea" type="V_WString" size="2" />
-            <Field field="PostCodeDistrict" type="V_WString" size="2" />
-            <Field field="PostCodeSector" type="V_WString" size="2" />
-            <Field field="PostCodeUnit" type="V_WString" size="2" />
+            <Field field="PostCodeArea" type="String" size="2" />
+            <Field field="PostCodeDistrict" type="String" size="2" />
+            <Field field="PostCodeSector" type="Byte" size="1" />
+            <Field field="PostCodeUnit" type="String" size="2" />
           </ParseComplex>
           <Match>
             <Field>Transaction unique identifier_Matched</Field>
@@ -327,63 +321,67 @@
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRegEx" />
     </Node>
-    <Node ToolID="10">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
-        <Position x="762" y="54" />
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="690" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Fields>
-            <Field field="Transaction unique identifier" selected="True" />
-            <Field field="Postcode" selected="True" />
-            <Field field="Property Type" selected="True" />
-            <Field field="Old/New" selected="True" />
-            <Field field="Duration" selected="True" />
-            <Field field="PAON" selected="True" />
-            <Field field="SAON" selected="True" />
-            <Field field="Street" selected="True" />
-            <Field field="Locality" selected="True" />
-            <Field field="Town/City" selected="True" />
-            <Field field="District" selected="True" />
-            <Field field="County" selected="True" />
-            <Field field="PPDCategory Type" selected="True" />
-            <Field field="PostCodeArea" selected="True" />
-            <Field field="PostCodeDistrict" selected="True" />
-            <Field field="PostCodeSector" selected="True" />
-            <Field field="PostCodeUnit" selected="True" />
-            <Field field="*Unknown" selected="True" />
-          </Fields>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Transaction unique identifier" selected="True" size="38" description="A reference number which is generated automatically recording each published sale. The number is unique and will change each time a sale is recorded." />
+            <SelectField field="Price" selected="True" description="	Sale price stated on the transfer deed." />
+            <SelectField field="Date of Transfer" selected="True" description="Date when the sale was completed, as stated on the transfer deed." />
+            <SelectField field="Postcode" selected="True" description="This is the postcode used at the time of the original transaction." />
+            <SelectField field="PostCodeArea" selected="True" />
+            <SelectField field="PostCodeDistrict" selected="True" />
+            <SelectField field="PostCodeSector" selected="True" />
+            <SelectField field="PostCodeUnit" selected="True" />
+            <SelectField field="Property Type" selected="True" description="D = Detached, S = Semi-Detached, T = Terraced, F = Flats/Maisonettes, O = Other" />
+            <SelectField field="Old/New" selected="True" rename="NewBuild" type="Bool" size="1" description="Is it a Newly Built Property" />
+            <SelectField field="Duration" selected="True" description="F = Freehold, L= Leasehold" />
+            <SelectField field="PAON" selected="True" size="64" description="Primary Addressable Object Name. Typically the house number or name" />
+            <SelectField field="SAON" selected="True" size="64" description="Secondary Addressable Object Name." />
+            <SelectField field="Street" selected="True" size="64" />
+            <SelectField field="Locality" selected="True" size="64" />
+            <SelectField field="Town/City" selected="True" size="32" />
+            <SelectField field="District" selected="True" size="32" />
+            <SelectField field="County" selected="True" size="32" />
+            <SelectField field="PPDCategory Type" selected="True" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="Transaction unique identifier" size="254" source="File: D:\Downloads\pp-complete.csv" type="String" />
-            <Field name="Price" source="File: D:\Downloads\pp-complete.csv" type="Int32" />
-            <Field name="Date of Transfer" source="File: D:\Downloads\pp-complete.csv" type="Date" />
-            <Field name="Postcode" size="8" source="File: D:\Downloads\pp-complete.csv" type="String" />
-            <Field name="Property Type" size="1" source="File: D:\Downloads\pp-complete.csv" type="String" />
-            <Field name="Old/New" size="254" source="Formula: [_CurrentField_]='Y'" type="V_String" />
-            <Field name="Duration" size="1" source="File: D:\Downloads\pp-complete.csv" type="String" />
-            <Field name="PAON" size="254" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
-            <Field name="SAON" size="254" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
-            <Field name="Street" size="254" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
-            <Field name="Locality" size="254" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
-            <Field name="Town/City" size="254" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
-            <Field name="District" size="254" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
-            <Field name="County" size="254" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
-            <Field name="PPDCategory Type" size="1" source="File: D:\Downloads\pp-complete.csv" type="String" />
-            <Field description="RegEx: Parsed from Postcode" name="PostCodeArea" size="2" source="RegEx: Parsed from Postcode" type="V_WString" />
-            <Field description="RegEx: Parsed from Postcode" name="PostCodeDistrict" size="2" source="RegEx: Parsed from Postcode" type="V_WString" />
-            <Field description="RegEx: Parsed from Postcode" name="PostCodeSector" size="2" source="RegEx: Parsed from Postcode" type="V_WString" />
-            <Field description="RegEx: Parsed from Postcode" name="PostCodeUnit" size="2" source="RegEx: Parsed from Postcode" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
       </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="786" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Field>PPDCategory Type</Field>
+            <Operator>=</Operator>
+            <Operands>
+              <Operand>A</Operand>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[PPDCategory Type] = "A"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
     </Node>
   </Nodes>
   <Connections>
@@ -405,7 +403,7 @@
     </Connection>
     <Connection>
       <Origin ToolID="6" Connection="True" />
-      <Destination ToolID="10" Connection="Input" />
+      <Destination ToolID="11" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="7" Connection="Output" />
@@ -416,7 +414,11 @@
       <Destination ToolID="6" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="10" Connection="Output" />
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="True" />
       <Destination ToolID="8" Connection="Input" />
     </Connection>
   </Connections>

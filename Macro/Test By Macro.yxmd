@@ -1,0 +1,545 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="11.3">
+  <Nodes>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="198" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="11" />
+          <Fields>
+            <Field name="Parent" />
+            <Field name="Key" />
+            <Field name="Value" />
+          </Fields>
+          <Data>
+            <r>
+              <c>AB</c>
+              <c>A</c>
+              <c>2</c>
+            </r>
+            <r>
+              <c>AB</c>
+              <c>A</c>
+              <c>1</c>
+            </r>
+            <r>
+              <c>AB</c>
+              <c>B</c>
+              <c>5</c>
+            </r>
+            <r>
+              <c>CD</c>
+              <c>C</c>
+              <c>6</c>
+            </r>
+            <r>
+              <c>CD</c>
+              <c>C</c>
+              <c>4</c>
+            </r>
+            <r>
+              <c>CD</c>
+              <c>C</c>
+              <c>2</c>
+            </r>
+            <r>
+              <c>CD</c>
+              <c>D</c>
+              <c>9</c>
+            </r>
+            <r>
+              <c>CD</c>
+              <c>D</c>
+              <c>7</c>
+            </r>
+            <r>
+              <c>CD</c>
+              <c>D</c>
+              <c>5</c>
+            </r>
+            <r>
+              <c>CD</c>
+              <c>D</c>
+              <c>3</c>
+            </r>
+            <r>
+              <c>CD</c>
+              <c>D</c>
+              <c>1</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="534" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_11972_2e8e675ddfc244e68480bd1ff83eae1f_\Engine_18272_1b43edd232994bbeadda99311b69e6d9_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings>
+        <Position x="402" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Text Box (14)">RowID</Value>
+          <Value name="Check Box (12)">True</Value>
+          <Value name="Drop Down (17)">Int64</Value>
+          <Value name="Numeric Up Down (20)">5</Value>
+          <Value name="Numeric Up Down (26)">1</Value>
+          <Value name="List Box (27)">"Parent"</Value>
+          <Value name="List Box (33)">"Key","Value"</Value>
+          <Value name="List Box (34)">"Value"</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Grouped and Sorted</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings Macro=".\GroupedRecordID.yxmc" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="534" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_11972_2e8e675ddfc244e68480bd1ff83eae1f_\Engine_18272_a7eb8e61e80f416684c8dd64285a3084_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings>
+        <Position x="402" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Text Box (14)">RowID</Value>
+          <Value name="Check Box (12)">True</Value>
+          <Value name="Drop Down (17)">Int16</Value>
+          <Value name="Numeric Up Down (20)">5</Value>
+          <Value name="Numeric Up Down (26)">1</Value>
+          <Value name="List Box (27)">""</Value>
+          <Value name="List Box (33)">""</Value>
+          <Value name="List Box (34)">""</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>No Grouping or Sort</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output7">
+          <RecordInfo>
+            <Field name="Parent" size="2" source="TextInput:" type="String" />
+            <Field name="Key" size="1" source="TextInput:" type="String" />
+            <Field name="Value" source="TextInput:" type="Byte" />
+            <Field description="Formula: IIF(ISNULL([Row-1:__RecordID__]),[#1],[Row-1:__RecordID__]+1)" name="RowID" source="Formula: [_CurrentField_]" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="C:\Repos\AlteryxRecordID\Macro\GroupedRecordID.yxmc" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="534" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_11972_2e8e675ddfc244e68480bd1ff83eae1f_\Engine_18272_2fbabd195faf4a6f8d93402122cc8f0b_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings>
+        <Position x="402" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Text Box (14)">RowID</Value>
+          <Value name="Check Box (12)">True</Value>
+          <Value name="Drop Down (17)">Byte</Value>
+          <Value name="Numeric Up Down (20)">5</Value>
+          <Value name="Numeric Up Down (26)">1</Value>
+          <Value name="List Box (27)">"Parent","Key"</Value>
+          <Value name="List Box (33)">""</Value>
+          <Value name="List Box (34)">""</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Just Grouping</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output7">
+          <RecordInfo>
+            <Field name="Parent" size="2" source="TextInput:" type="String" />
+            <Field name="Key" size="1" source="TextInput:" type="String" />
+            <Field name="Value" source="TextInput:" type="Byte" />
+            <Field description="Formula: IIF(ISNULL([Row-1:__RecordID__]),[#1],[Row-1:__RecordID__]+1)" name="RowID" source="Formula: [_CurrentField_]" type="Byte" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Parent" order="Ascending" />
+            <Field field="Key" order="Ascending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="C:\Repos\AlteryxRecordID\Macro\GroupedRecordID.yxmc" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="534" y="654" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_11972_2e8e675ddfc244e68480bd1ff83eae1f_\Engine_18272_cfc68b87c9be486494cac04377d9ab05_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings>
+        <Position x="402" y="654" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Text Box (14)">RowID</Value>
+          <Value name="Check Box (12)">True</Value>
+          <Value name="Drop Down (17)">String</Value>
+          <Value name="Numeric Up Down (20)">5</Value>
+          <Value name="Numeric Up Down (26)">1</Value>
+          <Value name="List Box (27)">"Parent"</Value>
+          <Value name="List Box (33)">"Key","Value"</Value>
+          <Value name="List Box (34)">"Value"</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Grouped and Sorted (String)</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output7">
+          <RecordInfo>
+            <Field name="Parent" size="2" source="TextInput:" type="String" />
+            <Field name="Key" size="1" source="TextInput:" type="String" />
+            <Field name="Value" source="TextInput:" type="Byte" />
+            <Field description="Formula: IIF(ISNULL([Row-1:__RecordID__]),[#1],[Row-1:__RecordID__]+1)" name="RowID" size="5" source="Formula: PadLeft(TRIM([_CurrentField_]),[#1],'0')" type="String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Parent" order="Ascending" />
+            <Field field="Key" order="Ascending" />
+            <Field field="Value" order="Descending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="C:\Repos\AlteryxRecordID\Macro\GroupedRecordID.yxmc" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="534" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_11972_2e8e675ddfc244e68480bd1ff83eae1f_\Engine_18272_a5ee9644e0374dc2b504b8733abcca75_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings>
+        <Position x="402" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Text Box (14)">RowID</Value>
+          <Value name="Check Box (12)">True</Value>
+          <Value name="Drop Down (17)">String</Value>
+          <Value name="Numeric Up Down (20)">5</Value>
+          <Value name="Numeric Up Down (26)">1</Value>
+          <Value name="List Box (27)">""</Value>
+          <Value name="List Box (33)">""</Value>
+          <Value name="List Box (34)">""</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>No Grouping or Sort (String)</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output7">
+          <RecordInfo>
+            <Field name="Parent" size="2" source="TextInput:" type="String" />
+            <Field name="Key" size="1" source="TextInput:" type="String" />
+            <Field name="Value" source="TextInput:" type="Byte" />
+            <Field description="Formula: IIF(ISNULL([Row-1:__RecordID__]),[#1],[Row-1:__RecordID__]+1)" name="RowID" size="5" source="Formula: PadLeft(TRIM([_CurrentField_]),[#1],'0')" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="C:\Repos\AlteryxRecordID\Macro\GroupedRecordID.yxmc" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="534" y="546" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_11972_2e8e675ddfc244e68480bd1ff83eae1f_\Engine_18272_e9b3a566ded34f7d808a1d1096c189b9_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings>
+        <Position x="402" y="546" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Text Box (14)">RowID</Value>
+          <Value name="Check Box (12)">True</Value>
+          <Value name="Drop Down (17)">WString</Value>
+          <Value name="Numeric Up Down (20)">5</Value>
+          <Value name="Numeric Up Down (26)">1</Value>
+          <Value name="List Box (27)">"Parent","Key"</Value>
+          <Value name="List Box (33)">""</Value>
+          <Value name="List Box (34)">""</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Just Grouping (String)</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output7">
+          <RecordInfo>
+            <Field name="Parent" size="2" source="TextInput:" type="String" />
+            <Field name="Key" size="1" source="TextInput:" type="String" />
+            <Field name="Value" source="TextInput:" type="Byte" />
+            <Field description="Formula: IIF(ISNULL([Row-1:__RecordID__]),[#1],[Row-1:__RecordID__]+1)" name="RowID" size="5" source="Formula: PadLeft(TRIM([_CurrentField_]),[#1],'0')" type="WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Parent" order="Ascending" />
+            <Field field="Key" order="Ascending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="C:\Repos\AlteryxRecordID\Macro\GroupedRecordID.yxmc" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output7" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output7" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output7" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output7" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output7" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output7" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Test By Macro</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

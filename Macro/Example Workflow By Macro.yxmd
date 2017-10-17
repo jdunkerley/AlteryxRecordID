@@ -1,0 +1,336 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="11.3">
+  <Nodes>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">..\2016PPData.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>2016PPData.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="A reference number which is generated automatically recording each published sale. The number is unique and will change each time a sale is recorded." name="Transaction unique identifier" size="38" source="File: D:\Downloads\pp-complete.csv" type="String" />
+            <Field description=" Sale price stated on the transfer deed." name="Price" source="File: D:\Downloads\pp-complete.csv" type="Int32" />
+            <Field description="Date when the sale was completed, as stated on the transfer deed." name="Date of Transfer" source="File: D:\Downloads\pp-complete.csv" type="Date" />
+            <Field description="This is the postcode used at the time of the original transaction." name="Postcode" size="8" source="File: D:\Downloads\pp-complete.csv" type="String" />
+            <Field description="RegEx: Parsed from Postcode" name="PostCodeArea" size="2" source="RegEx: Parsed from Postcode" type="String" />
+            <Field description="RegEx: Parsed from Postcode" name="PostCodeDistrict" size="2" source="RegEx: Parsed from Postcode" type="String" />
+            <Field description="RegEx: Parsed from Postcode" name="PostCodeSector" source="RegEx: Parsed from Postcode" type="Byte" />
+            <Field description="RegEx: Parsed from Postcode" name="PostCodeUnit" size="2" source="RegEx: Parsed from Postcode" type="String" />
+            <Field description="D = Detached, S = Semi-Detached, T = Terraced, F = Flats/Maisonettes, O = Other" name="Property Type" size="1" source="File: D:\Downloads\pp-complete.csv" type="String" />
+            <Field description="Is it a Newly Built Property" name="NewBuild" source="Formula: [_CurrentField_]='Y'" type="Bool" />
+            <Field description="F = Freehold, L= Leasehold" name="Duration" size="1" source="File: D:\Downloads\pp-complete.csv" type="String" />
+            <Field description="Primary Addressable Object Name. Typically the house number or name" name="PAON" size="64" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
+            <Field description="Secondary Addressable Object Name." name="SAON" size="64" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
+            <Field name="Street" size="64" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
+            <Field name="Locality" size="64" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
+            <Field name="Town/City" size="32" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
+            <Field name="District" size="32" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
+            <Field name="County" size="32" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
+            <Field name="PPDCategory Type" size="1" source="File: D:\Downloads\pp-complete.csv" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="174" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="County" order="Ascending" />
+            <Field field="PostCodeArea" order="Ascending" />
+            <Field field="Price" order="Descending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>County - Ascending
+PostCodeArea - Ascending
+Price - Descending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="306" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="False" />
+          <UpdateField_Name>Transaction unique identifier</UpdateField_Name>
+          <CreateField_Name>RecordID</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <OtherRows>Empty</OtherRows>
+          <NumRows value="1" />
+          <Expression>[Row-1:RecordID]+1</Expression>
+          <GroupByFields>
+            <Field field="County" />
+            <Field field="PostCodeArea" />
+          </GroupByFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Row-1:RecordID]+1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="414" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_16584_0683955adabd49c99138894411b37e19_\Engine_18272_337c92af93c9441ba41f3834db65ffdc_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings>
+        <Position x="174" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Text Box (14)">RecordID</Value>
+          <Value name="Check Box (12)">False</Value>
+          <Value name="Drop Down (17)">Int64</Value>
+          <Value name="Numeric Up Down (20)">5</Value>
+          <Value name="Numeric Up Down (26)">1</Value>
+          <Value name="List Box (27)">"PostCodeArea","County"</Value>
+          <Value name="List Box (33)">"Price"</Value>
+          <Value name="List Box (34)">"Price"</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output7">
+          <RecordInfo>
+            <Field description="Formula: IIF(ISNULL([Row-1:__RecordID__]),[#1],[Row-1:__RecordID__]+1)" name="RecordID" source="Formula: [_CurrentField_]" type="Int64" />
+            <Field description="A reference number which is generated automatically recording each published sale. The number is unique and will change each time a sale is recorded." name="Transaction unique identifier" size="38" source="File: D:\Downloads\pp-complete.csv" type="String" />
+            <Field description=" Sale price stated on the transfer deed." name="Price" source="File: D:\Downloads\pp-complete.csv" type="Int32" />
+            <Field description="Date when the sale was completed, as stated on the transfer deed." name="Date of Transfer" source="File: D:\Downloads\pp-complete.csv" type="Date" />
+            <Field description="This is the postcode used at the time of the original transaction." name="Postcode" size="8" source="File: D:\Downloads\pp-complete.csv" type="String" />
+            <Field description="RegEx: Parsed from Postcode" name="PostCodeArea" size="2" source="RegEx: Parsed from Postcode" type="String" />
+            <Field description="RegEx: Parsed from Postcode" name="PostCodeDistrict" size="2" source="RegEx: Parsed from Postcode" type="String" />
+            <Field description="RegEx: Parsed from Postcode" name="PostCodeSector" source="RegEx: Parsed from Postcode" type="Byte" />
+            <Field description="RegEx: Parsed from Postcode" name="PostCodeUnit" size="2" source="RegEx: Parsed from Postcode" type="String" />
+            <Field description="D = Detached, S = Semi-Detached, T = Terraced, F = Flats/Maisonettes, O = Other" name="Property Type" size="1" source="File: D:\Downloads\pp-complete.csv" type="String" />
+            <Field description="Is it a Newly Built Property" name="NewBuild" source="Formula: [_CurrentField_]='Y'" type="Bool" />
+            <Field description="F = Freehold, L= Leasehold" name="Duration" size="1" source="File: D:\Downloads\pp-complete.csv" type="String" />
+            <Field description="Primary Addressable Object Name. Typically the house number or name" name="PAON" size="64" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
+            <Field description="Secondary Addressable Object Name." name="SAON" size="64" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
+            <Field name="Street" size="64" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
+            <Field name="Locality" size="64" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
+            <Field name="Town/City" size="32" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
+            <Field name="District" size="32" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
+            <Field name="County" size="32" source="File: D:\Downloads\pp-complete.csv" type="V_String" />
+            <Field name="PPDCategory Type" size="1" source="File: D:\Downloads\pp-complete.csv" type="String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="PostCodeArea" order="Ascending" />
+            <Field field="County" order="Ascending" />
+            <Field field="Price" order="Descending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="GroupedRecordID.yxmc" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="414" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_16584_0683955adabd49c99138894411b37e19_\Engine_18272_23916c832b364e699e9d5998ce84fbc9_.yxdb</TempFile>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="450" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Transaction unique identifier" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Transaction unique identifier" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Transaction unique identifier" selected="True" />
+                <SelectField field="Left_RecordID" selected="True" />
+                <SelectField field="Right_RecordID" selected="True" rename="Macro_RecordID" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="546" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[RecordID] != [Macro_RecordID]</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[RecordID] != [Macro_RecordID]</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="666" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_16584_0683955adabd49c99138894411b37e19_\Engine_18272_d8ee21d7ba1f41a4a54288f2292666bd_.yxdb</TempFile>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="8" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output7" />
+      <Destination ToolID="8" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output7" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Join" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="True" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="True" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Example Workflow By Macro</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

@@ -131,7 +131,7 @@
               </SortInfo>
             </MetaInfo>
           </Properties>
-          <EngineSettings Macro="C:\Repos\AlteryxRecordID\Macro\GroupedRecordID.yxmc" />
+          <EngineSettings Macro="..\Macro\GroupedRecordID.yxmc" />
         </Node>
         <Node ToolID="31">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
@@ -256,7 +256,7 @@
               <Left value="False" />
             </Annotation>
           </Properties>
-          <EngineSettings Macro="C:\Repos\AlteryxRecordID\ResultCompare.yxmc" />
+          <EngineSettings Macro="..\ResultCompare.yxmc" />
         </Node>
       </ChildNodes>
     </Node>
@@ -316,7 +316,7 @@
               </SortInfo>
             </MetaInfo>
           </Properties>
-          <EngineSettings Macro="C:\Repos\AlteryxRecordID\Macro\GroupedRecordID.yxmc" />
+          <EngineSettings Macro="..\Macro\GroupedRecordID.yxmc" />
         </Node>
         <Node ToolID="36">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
@@ -441,7 +441,7 @@
               <Left value="False" />
             </Annotation>
           </Properties>
-          <EngineSettings Macro="C:\Repos\AlteryxRecordID\ResultCompare.yxmc" />
+          <EngineSettings Macro="..\ResultCompare.yxmc" />
         </Node>
       </ChildNodes>
     </Node>
@@ -493,7 +493,7 @@
               </RecordInfo>
             </MetaInfo>
           </Properties>
-          <EngineSettings Macro="C:\Repos\AlteryxRecordID\Macro\GroupedRecordID.yxmc" />
+          <EngineSettings Macro="..\Macro\GroupedRecordID.yxmc" />
         </Node>
         <Node ToolID="27">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
@@ -597,7 +597,7 @@
               <Left value="False" />
             </Annotation>
           </Properties>
-          <EngineSettings Macro="C:\Repos\AlteryxRecordID\ResultCompare.yxmc" />
+          <EngineSettings Macro="..\ResultCompare.yxmc" />
         </Node>
         <Node ToolID="29">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
@@ -789,7 +789,7 @@
               <Left value="False" />
             </Annotation>
           </Properties>
-          <EngineSettings Macro="C:\Repos\AlteryxRecordID\ResultCompare.yxmc" />
+          <EngineSettings Macro="..\ResultCompare.yxmc" />
         </Node>
       </ChildNodes>
     </Node>
@@ -848,7 +848,7 @@
               </SortInfo>
             </MetaInfo>
           </Properties>
-          <EngineSettings Macro="C:\Repos\AlteryxRecordID\Macro\GroupedRecordID.yxmc" />
+          <EngineSettings Macro="..\Macro\GroupedRecordID.yxmc" />
         </Node>
         <Node ToolID="18">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
@@ -952,7 +952,7 @@
               <Left value="False" />
             </Annotation>
           </Properties>
-          <EngineSettings Macro="C:\Repos\AlteryxRecordID\ResultCompare.yxmc" />
+          <EngineSettings Macro="..\ResultCompare.yxmc" />
         </Node>
         <Node ToolID="20">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
@@ -1027,7 +1027,7 @@
               </RecordInfo>
             </MetaInfo>
           </Properties>
-          <EngineSettings Macro="C:\Repos\AlteryxRecordID\Macro\GroupedRecordID.yxmc" />
+          <EngineSettings Macro="..\Macro\GroupedRecordID.yxmc" />
         </Node>
         <Node ToolID="15">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
@@ -1134,7 +1134,7 @@
               <Implicit />
             </Dependencies>
           </Properties>
-          <EngineSettings Macro="C:\Repos\AlteryxRecordID\ResultCompare.yxmc" />
+          <EngineSettings Macro="..\ResultCompare.yxmc" />
         </Node>
         <Node ToolID="17">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">

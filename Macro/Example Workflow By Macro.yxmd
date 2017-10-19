@@ -91,34 +91,6 @@ Price - Descending</DefaultAnnotationText>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
     </Node>
-    <Node ToolID="5">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="414" y="54" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_16584_0683955adabd49c99138894411b37e19_\Engine_18272_337c92af93c9441ba41f3834db65ffdc_.yxdb</TempFile>
-          <TempFileDataProfiling />
-          <Layout>
-            <ViewMode>Single</ViewMode>
-            <ViewSize value="100" />
-            <View1>
-              <DefaultTab>Profile</DefaultTab>
-              <Hints>
-                <Table />
-              </Hints>
-            </View1>
-            <View2 />
-          </Layout>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
-    </Node>
     <Node ToolID="6">
       <GuiSettings>
         <Position x="174" y="198" />
@@ -173,22 +145,6 @@ Price - Descending</DefaultAnnotationText>
         </MetaInfo>
       </Properties>
       <EngineSettings Macro="GroupedRecordID.yxmc" />
-    </Node>
-    <Node ToolID="7">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="414" y="198" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_16584_0683955adabd49c99138894411b37e19_\Engine_18272_23916c832b364e699e9d5998ce84fbc9_.yxdb</TempFile>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
@@ -246,7 +202,7 @@ Price - Descending</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_16584_0683955adabd49c99138894411b37e19_\Engine_18272_d8ee21d7ba1f41a4a54288f2292666bd_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_12428_2eecc670cb1640e2af2c3e02f65ac1e6_\Engine_18272_937b3b124fbf4b77b2981681bfe3d870_.yxdb</TempFile>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -272,19 +228,11 @@ Price - Descending</DefaultAnnotationText>
     </Connection>
     <Connection>
       <Origin ToolID="4" Connection="Output" />
-      <Destination ToolID="5" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="4" Connection="Output" />
       <Destination ToolID="8" Connection="Left" />
     </Connection>
     <Connection>
       <Origin ToolID="6" Connection="Output7" />
       <Destination ToolID="8" Connection="Right" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="6" Connection="Output7" />
-      <Destination ToolID="7" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="8" Connection="Join" />

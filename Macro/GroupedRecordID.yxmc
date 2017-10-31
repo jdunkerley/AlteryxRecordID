@@ -801,8 +801,8 @@
       <Copyright>Copyright (c) 2017 James Dunkerley (MIT license)</Copyright>
       <DescriptionLink actual="https://github.com/jdunkerley/AlteryxAddIns/wiki/Grouped-Record-ID" displayed="https://github.com/jdunkerley/AlteryxAddIns/wiki/Grouped-Record-ID" />
       <Example>
-        <Description />
-        <File />
+        <Description></Description>
+        <File></File>
       </Example>
     </MetaInfo>
     <Events>

@@ -266,7 +266,7 @@
       </GuiSettings>
       <Properties>
         <Configuration>
-          <File FileFormat="19" MaxRecords="">C:\Repos\AlteryxRecordID\2016PPData.yxdb</File>
+          <File FileFormat="19" MaxRecords="">.\2016PPData.yxdb</File>
           <Passwords />
           <FormatSpecificOptions>
             <NoSpatialIndex>False</NoSpatialIndex>

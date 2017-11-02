@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="42" y="42" />
+        <Position x="42" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -81,7 +81,7 @@
     </Node>
     <Node ToolID="34">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="500" y="481" width="295" height="213" />
+        <Position x="512" y="527" width="295" height="213" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -99,18 +99,18 @@
       <ChildNodes>
         <Node ToolID="14">
           <GuiSettings>
-            <Position x="510" y="594" />
+            <Position x="522" y="640" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <Value name="Text Box (14)">RowID</Value>
-              <Value name="Check Box (12)">True</Value>
-              <Value name="Drop Down (17)">WString</Value>
-              <Value name="Numeric Up Down (20)">5</Value>
-              <Value name="Numeric Up Down (26)">1</Value>
-              <Value name="List Box (27)">"Parent","Key"</Value>
-              <Value name="List Box (33)">""</Value>
-              <Value name="List Box (34)">""</Value>
+              <Value name="FieldName">RowID</Value>
+              <Value name="LastColumn">True</Value>
+              <Value name="FieldType">WString</Value>
+              <Value name="StringSize">5</Value>
+              <Value name="StartingValue">1</Value>
+              <Value name="GroupingFields">"Parent","Key"</Value>
+              <Value name="SortingFields">""</Value>
+              <Value name="DescendingFields">""</Value>
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
@@ -135,7 +135,7 @@
         </Node>
         <Node ToolID="31">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="510" y="510" />
+            <Position x="522" y="556" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -225,7 +225,7 @@
         </Node>
         <Node ToolID="32">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="606" y="510" />
+            <Position x="618" y="556" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -246,7 +246,7 @@
         </Node>
         <Node ToolID="33">
           <GuiSettings>
-            <Position x="726" y="582" />
+            <Position x="738" y="628" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -262,7 +262,7 @@
     </Node>
     <Node ToolID="39">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="821" y="586" width="301" height="231" />
+        <Position x="833" y="632" width="301" height="231" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -280,18 +280,18 @@
       <ChildNodes>
         <Node ToolID="10">
           <GuiSettings>
-            <Position x="846" y="702" />
+            <Position x="858" y="748" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <Value name="Text Box (14)">RowID</Value>
-              <Value name="Check Box (12)">True</Value>
-              <Value name="Drop Down (17)">V_String</Value>
-              <Value name="Numeric Up Down (20)">10</Value>
-              <Value name="Numeric Up Down (26)">1</Value>
-              <Value name="List Box (27)">"Parent"</Value>
-              <Value name="List Box (33)">"Key","Value"</Value>
-              <Value name="List Box (34)">"Value"</Value>
+              <Value name="FieldName">RowID</Value>
+              <Value name="LastColumn">True</Value>
+              <Value name="FieldType">V_String</Value>
+              <Value name="StringSize">10</Value>
+              <Value name="StartingValue">1</Value>
+              <Value name="GroupingFields">"Parent"</Value>
+              <Value name="SortingFields">"Key","Value"</Value>
+              <Value name="DescendingFields">"Value"</Value>
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
@@ -299,9 +299,6 @@
               <DefaultAnnotationText />
               <Left value="False" />
             </Annotation>
-            <Dependencies>
-              <Implicit />
-            </Dependencies>
             <MetaInfo connection="Output7">
               <RecordInfo>
                 <Field name="Parent" size="2" source="TextInput:" type="String" />
@@ -320,7 +317,7 @@
         </Node>
         <Node ToolID="36">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="846" y="630" />
+            <Position x="858" y="676" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -410,7 +407,7 @@
         </Node>
         <Node ToolID="37">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="942" y="630" />
+            <Position x="954" y="676" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -431,7 +428,7 @@
         </Node>
         <Node ToolID="38">
           <GuiSettings>
-            <Position x="1038" y="690" />
+            <Position x="1050" y="736" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -447,7 +444,7 @@
     </Node>
     <Node ToolID="30">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="212" y="361" width="271" height="189" />
+        <Position x="224" y="407" width="271" height="189" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -465,18 +462,18 @@
       <ChildNodes>
         <Node ToolID="12">
           <GuiSettings>
-            <Position x="222" y="450" />
+            <Position x="234" y="496" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <Value name="Text Box (14)">RowID</Value>
-              <Value name="Check Box (12)">True</Value>
-              <Value name="Drop Down (17)">String</Value>
-              <Value name="Numeric Up Down (20)">5</Value>
-              <Value name="Numeric Up Down (26)">1</Value>
-              <Value name="List Box (27)">""</Value>
-              <Value name="List Box (33)">""</Value>
-              <Value name="List Box (34)">""</Value>
+              <Value name="FieldName">RowID</Value>
+              <Value name="LastColumn">True</Value>
+              <Value name="FieldType">String</Value>
+              <Value name="StringSize">5</Value>
+              <Value name="StartingValue">1</Value>
+              <Value name="GroupingFields">""</Value>
+              <Value name="SortingFields">""</Value>
+              <Value name="DescendingFields">""</Value>
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
@@ -497,7 +494,7 @@
         </Node>
         <Node ToolID="27">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="222" y="390" />
+            <Position x="234" y="436" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -587,7 +584,7 @@
         </Node>
         <Node ToolID="28">
           <GuiSettings>
-            <Position x="414" y="438" />
+            <Position x="426" y="484" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -601,7 +598,7 @@
         </Node>
         <Node ToolID="29">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="318" y="390" />
+            <Position x="330" y="436" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -623,7 +620,7 @@
     </Node>
     <Node ToolID="26">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="786" y="222" width="271" height="201" />
+        <Position x="798" y="268" width="271" height="201" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -641,18 +638,18 @@
       <ChildNodes>
         <Node ToolID="4">
           <GuiSettings>
-            <Position x="796" y="323" />
+            <Position x="808" y="369" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <Value name="Text Box (14)">RowID</Value>
-              <Value name="Check Box (12)">True</Value>
-              <Value name="Drop Down (17)">Int64</Value>
-              <Value name="Numeric Up Down (20)">5</Value>
-              <Value name="Numeric Up Down (26)">1</Value>
-              <Value name="List Box (27)">"Parent"</Value>
-              <Value name="List Box (33)">"Key","Value"</Value>
-              <Value name="List Box (34)">"Value"</Value>
+              <Value name="FieldName">RowID</Value>
+              <Value name="LastColumn">True</Value>
+              <Value name="FieldType">Int64</Value>
+              <Value name="StringSize">5</Value>
+              <Value name="StartingValue">1</Value>
+              <Value name="GroupingFields">"Parent"</Value>
+              <Value name="SortingFields">"Key","Value"</Value>
+              <Value name="DescendingFields">"Value"</Value>
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
@@ -660,15 +657,25 @@
               <DefaultAnnotationText />
               <Left value="False" />
             </Annotation>
-            <Dependencies>
-              <Implicit />
-            </Dependencies>
+            <MetaInfo connection="Output7">
+              <RecordInfo>
+                <Field name="Parent" size="2" source="TextInput:" type="String" />
+                <Field name="Key" size="1" source="TextInput:" type="String" />
+                <Field name="Value" source="TextInput:" type="Byte" />
+                <Field description="Formula: IIF(ISNULL([Row-1:__RecordID__]),[#1],[Row-1:__RecordID__]+1)" name="RowID" source="Formula: [_CurrentField_]" type="Int64" />
+              </RecordInfo>
+              <SortInfo>
+                <Field field="Parent" order="Ascending" />
+                <Field field="Key" order="Ascending" />
+                <Field field="Value" order="Descending" />
+              </SortInfo>
+            </MetaInfo>
           </Properties>
           <EngineSettings Macro=".\GroupedRecordID.yxmc" />
         </Node>
         <Node ToolID="23">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="796" y="251" />
+            <Position x="808" y="297" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -758,7 +765,7 @@
         </Node>
         <Node ToolID="24">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="892" y="251" />
+            <Position x="904" y="297" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -779,7 +786,7 @@
         </Node>
         <Node ToolID="25">
           <GuiSettings>
-            <Position x="988" y="311" />
+            <Position x="1000" y="357" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -795,7 +802,7 @@
     </Node>
     <Node ToolID="22">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="498" y="102" width="271" height="174" />
+        <Position x="510" y="148" width="271" height="174" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -813,18 +820,18 @@
       <ChildNodes>
         <Node ToolID="8">
           <GuiSettings>
-            <Position x="508" y="191" />
+            <Position x="520" y="237" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <Value name="Text Box (14)">RowID</Value>
-              <Value name="Check Box (12)">True</Value>
-              <Value name="Drop Down (17)">Byte</Value>
-              <Value name="Numeric Up Down (20)">5</Value>
-              <Value name="Numeric Up Down (26)">1</Value>
-              <Value name="List Box (27)">"Parent","Key"</Value>
-              <Value name="List Box (33)">""</Value>
-              <Value name="List Box (34)">""</Value>
+              <Value name="FieldName">RowID</Value>
+              <Value name="LastColumn">True</Value>
+              <Value name="FieldType">Byte</Value>
+              <Value name="StringSize">5</Value>
+              <Value name="StartingValue">1</Value>
+              <Value name="GroupingFields">"Parent","Key"</Value>
+              <Value name="SortingFields">""</Value>
+              <Value name="DescendingFields">""</Value>
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
@@ -832,9 +839,6 @@
               <DefaultAnnotationText />
               <Left value="False" />
             </Annotation>
-            <Dependencies>
-              <Implicit />
-            </Dependencies>
             <MetaInfo connection="Output7">
               <RecordInfo>
                 <Field name="Parent" size="2" source="TextInput:" type="String" />
@@ -852,7 +856,7 @@
         </Node>
         <Node ToolID="18">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="508" y="131" />
+            <Position x="520" y="177" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -942,7 +946,7 @@
         </Node>
         <Node ToolID="19">
           <GuiSettings>
-            <Position x="700" y="179" />
+            <Position x="712" y="225" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -956,7 +960,7 @@
         </Node>
         <Node ToolID="20">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="604" y="131" />
+            <Position x="616" y="177" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -978,7 +982,7 @@
     </Node>
     <Node ToolID="21">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="210" y="8" width="271" height="201" />
+        <Position x="222" y="54" width="271" height="201" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -996,18 +1000,18 @@
       <ChildNodes>
         <Node ToolID="6">
           <GuiSettings>
-            <Position x="220" y="109" />
+            <Position x="232" y="155" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <Value name="Text Box (14)">RowID</Value>
-              <Value name="Check Box (12)">True</Value>
-              <Value name="Drop Down (17)">Int16</Value>
-              <Value name="Numeric Up Down (20)">5</Value>
-              <Value name="Numeric Up Down (26)">1</Value>
-              <Value name="List Box (27)">""</Value>
-              <Value name="List Box (33)">""</Value>
-              <Value name="List Box (34)">""</Value>
+              <Value name="FieldName">RowID</Value>
+              <Value name="LastColumn">True</Value>
+              <Value name="FieldType">Int16</Value>
+              <Value name="StringSize">5</Value>
+              <Value name="StartingValue">1</Value>
+              <Value name="GroupingFields">""</Value>
+              <Value name="SortingFields">""</Value>
+              <Value name="DescendingFields">""</Value>
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
@@ -1015,9 +1019,6 @@
               <DefaultAnnotationText />
               <Left value="False" />
             </Annotation>
-            <Dependencies>
-              <Implicit />
-            </Dependencies>
             <MetaInfo connection="Output7">
               <RecordInfo>
                 <Field name="Parent" size="2" source="TextInput:" type="String" />
@@ -1031,7 +1032,7 @@
         </Node>
         <Node ToolID="15">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="220" y="37" />
+            <Position x="232" y="83" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1121,7 +1122,7 @@
         </Node>
         <Node ToolID="16">
           <GuiSettings>
-            <Position x="412" y="97" />
+            <Position x="424" y="143" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -1130,15 +1131,12 @@
               <DefaultAnnotationText />
               <Left value="False" />
             </Annotation>
-            <Dependencies>
-              <Implicit />
-            </Dependencies>
           </Properties>
           <EngineSettings Macro="..\ResultCompare.yxmc" />
         </Node>
         <Node ToolID="17">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="316" y="37.00002" />
+            <Position x="328" y="83.00002" />
           </GuiSettings>
           <Properties>
             <Configuration>

@@ -97,14 +97,14 @@ Price - Descending</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Value name="Text Box (14)">RecordID</Value>
-          <Value name="Check Box (12)">False</Value>
-          <Value name="Drop Down (17)">Int64</Value>
-          <Value name="Numeric Up Down (20)">5</Value>
-          <Value name="Numeric Up Down (26)">1</Value>
-          <Value name="List Box (27)">"PostCodeArea","County"</Value>
-          <Value name="List Box (33)">"Price"</Value>
-          <Value name="List Box (34)">"Price"</Value>
+          <Value name="FieldName">RecordID</Value>
+          <Value name="LastColumn">False</Value>
+          <Value name="FieldType">Int64</Value>
+          <Value name="StringSize">5</Value>
+          <Value name="StartingValue">1</Value>
+          <Value name="GroupingFields">"PostCodeArea","County"</Value>
+          <Value name="SortingFields">"Price"</Value>
+          <Value name="DescendingFields">"Price"</Value>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />

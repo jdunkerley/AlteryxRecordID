@@ -740,49 +740,49 @@
     <Constants>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>Text Box (14)</Name>
+        <Name>FieldName</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>Check Box (12)</Name>
+        <Name>LastColumn</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>Drop Down (17)</Name>
+        <Name>FieldType</Name>
         <Value>Int64</Value>
         <IsNumeric value="False" />
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>Numeric Up Down (20)</Name>
+        <Name>StringSize</Name>
         <Value />
         <IsNumeric value="True" />
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>Numeric Up Down (26)</Name>
+        <Name>StartingValue</Name>
         <Value />
         <IsNumeric value="True" />
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>List Box (27)</Name>
+        <Name>GroupingFields</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>List Box (33)</Name>
+        <Name>SortingFields</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>List Box (34)</Name>
+        <Name>DescendingFields</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
@@ -956,7 +956,7 @@
             <Question>
               <Type>TextBox</Type>
               <Description>Field Name</Description>
-              <Name>Text Box (14)</Name>
+              <Name>FieldName</Name>
               <ToolId value="14" />
               <Default>RecordID</Default>
               <Password value="False" />
@@ -966,7 +966,7 @@
             <Question>
               <Type>BooleanGroup</Type>
               <Description>Add Field As Last Column</Description>
-              <Name>Check Box (12)</Name>
+              <Name>LastColumn</Name>
               <ToolId value="12" />
               <Questions />
               <Default value="False" />
@@ -975,7 +975,7 @@
             <Question>
               <Type>ListBox</Type>
               <Description>Field Type</Description>
-              <Name>Drop Down (17)</Name>
+              <Name>FieldType</Name>
               <ToolId value="17" />
               <Multiple value="False" />
               <Default>Int64</Default>
@@ -992,8 +992,8 @@ V_WString
             </Question>
             <Question>
               <Type>NumericUpDown</Type>
-              <Description>String Sixe:</Description>
-              <Name>Numeric Up Down (20)</Name>
+              <Description>String Size:</Description>
+              <Name>StringSize</Name>
               <ToolId value="20" />
               <Minimum value="0" />
               <Maximum value="100" />
@@ -1004,7 +1004,7 @@ V_WString
             <Question>
               <Type>NumericUpDown</Type>
               <Description>Starting Value</Description>
-              <Name>Numeric Up Down (26)</Name>
+              <Name>StartingValue</Name>
               <ToolId value="26" />
               <Minimum value="0" />
               <Maximum value="100000" />
@@ -1015,7 +1015,7 @@ V_WString
             <Question>
               <Type>ListBox</Type>
               <Description>Grouping Fields</Description>
-              <Name>List Box (27)</Name>
+              <Name>GroupingFields</Name>
               <ToolId value="27" />
               <Multiple value="True" />
               <Multiple_Custom value="True" />
@@ -1031,7 +1031,7 @@ V_WString
             <Question>
               <Type>ListBox</Type>
               <Description>Sorting Fields</Description>
-              <Name>List Box (33)</Name>
+              <Name>SortingFields</Name>
               <ToolId value="33" />
               <Multiple value="True" />
               <Multiple_Custom value="True" />
@@ -1047,7 +1047,7 @@ V_WString
             <Question>
               <Type>ListBox</Type>
               <Description>Descending Fields</Description>
-              <Name>List Box (34)</Name>
+              <Name>DescendingFields</Name>
               <ToolId value="34" />
               <Multiple value="True" />
               <Multiple_Custom value="True" />

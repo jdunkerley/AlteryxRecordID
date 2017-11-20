@@ -1,5 +1,4 @@
 ﻿param($macroFile, $targetFolder)
-
 $ErrorActionPreference = "Stop"
 
 function Add-Connection($node, $config) {
@@ -45,8 +44,14 @@ function Write-MacroConfigAndImage($macroFile, $config) {
     Add-Content $config -Value "    <GuiSettings Html=""${name}GUI.html"" Icon=""logo.png"" SDKVersion=""10.1"">"
 
     $macroInputs =$xmlDoc.AlteryxDocument.Nodes.SelectNodes("Node[GuiSettings/@Plugin='AlteryxBasePluginsGui.MacroInput.MacroInput']")
-    if ($macroInputs.Count -ne 0) {
+    $controlParams =$xmlDoc.AlteryxDocument.Nodes.SelectNodes("Node[GuiSettings/@Plugin='AlteryxGuiToolkit.Questions.ControlParam.ControlParam']")
+    if ($macroInputs.Count -ne 0 -or $controlParams.Count -ne 0) {
         Add-Content $config -Value '        <InputConnections>'
+
+        if ($controlParams.Count -ne 0) {
+            Add-Content $config -Value '            <Connections Name="Control" AllowMultiple="False" Optional="False" Type="Connection" Label="¿"/>'
+        }
+
         foreach ($macroInput in $macroInputs) {
             Add-Connection -node $macroInput -config $config
         }
@@ -138,6 +143,82 @@ function Add-MacroToPackage($macroFile, $destination) {
     Set-Content -Path $file -Value $content
 }
 
+function Write-HTMLFile($macroName, $destination) {
+    $content = @'
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>[ToolName]</title>
+    <script type="text/javascript">
+        document.write(`<link rel="import" href="${window.Alteryx.LibDir}2/lib/includes.html">`)
+    </script>
+</head>
+<body>
+	<form>
+	</form>
+    <script type="text/javascript" src="[ToolName]GUI.js"></script>
+</body>
+</html>
+'@
+    Set-Content -Path (Join-Path $destination "${macroName}GUI.html") ($content.Replace('[ToolName]', $macroName))
+}
+
+function Write-JSFile($macroName, $destination) {
+    $content = @'
+/**
+ * Specify actions that will take place before the tool's configuration is loaded into the manager.
+ * @param manager The data manager.
+ * @param AlteryxDataItems The data items in use on this page.
+ * @param json Configuration
+ */
+Alteryx.GUI.BeforeLoad = (manager, dataItems, json) => {
+}
+
+/**
+ * Specify actions that will take place before the tool's configuration is loaded into the manager.
+ * @param manager The data manager.
+ * @param AlteryxDataItems The data items in use on this page.
+ */
+Alteryx.GUI.AfterLoad = (manager, AlteryxDataItems) => {
+}
+
+/**
+ * Reformat the JSON to the style we need
+ * @param json Configuration
+ */
+Alteryx.GUI.BeforeGetConfiguration: (json) =>  {
+    return json
+}
+
+/**
+ * Set the tool's default annotation on the canvas.
+ * @param manager The data manager.
+ * @returns {string}
+ */
+Alteryx.GUI.Annotation = (manager) => ""
+'@
+
+    Set-Content -Path (Join-Path $destination "${macroName}GUI.js") ($content.Replace('[ToolName]', $macroName))
+}
+
+function Write-URLToFIle($uri, $file) {
+    Invoke-WebRequest -Uri $uri -Method Head -Verbose
+    if (Test-Path $file) {
+        Remove-Item -Path $file
+    }
+    Invoke-WebRequest -Uri $uri -OutFile $file -TimeoutSec 60
+}
+
+function Write-Installers($root, $name) {
+    Write-URLToFIle https://raw.githubusercontent.com/jdunkerley/AlteryxAddIns/master/Scripts/InstallerHTML.ps1 (Join-Path $root Installer.ps1)
+    Set-Content -Path (Join-Path $root "Install.bat") "pushd %~dp0"
+    Add-Content -Path (Join-Path $root "Install.bat") "PowerShell -C ""./Installer.ps1 $name"""
+    Write-URLToFIle https://raw.githubusercontent.com/jdunkerley/AlteryxAddIns/master/Scripts/UninstallerHTML.ps1 (Join-Path $root Uninstaller.ps1)
+    Set-Content -Path (Join-Path $root "Uninstall.bat") "pushd %~dp0"
+    Add-Content -Path (Join-Path $root "Uninstall.bat") "PowerShell -C ""./Uninstaller.ps1 $name """
+}
+
 if (Test-Path $macroFile) {
     $macroFile = Resolve-Path $macroFile
     $name = (Split-Path $macroFile -Leaf) -replace ".yxmc", ""
@@ -156,3 +237,7 @@ Write-MacroConfigAndImage -macroFile $macroFile -config (Join-Path $temp "${name
 
 New-Item -Name 'Supporting_Macros' -Path $temp -type directory | Out-Null
 Add-MacroToPackage -macroFile $macroFile -destination (Join-Path $temp 'Supporting_Macros')
+
+Write-HTMLFile $name $temp
+Write-JSFile $name $temp
+Write-Installers $targetFolder "${name}JS"

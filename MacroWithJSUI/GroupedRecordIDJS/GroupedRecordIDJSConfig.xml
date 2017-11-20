@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<AlteryxJavaScriptPlugin>
+    <EngineSettings EngineDLL="Macro" EngineDLLEntryPoint="GroupedRecordIDJS/Supporting_Macros/GroupedRecordID.yxmc" SDKVersion="10.1"/>
+    <GuiSettings Html="GroupedRecordIDGUI.html" Icon="logo.png" SDKVersion="10.1">
+        <InputConnections>
+            <Connections Name="Input" AllowMultiple="False" Optional="False" Type="Connection"/>
+        </InputConnections>
+        <OutputConnections>
+            <Connections Name="Output7" AllowMultiple="False" Optional="" Type="Connection"/>
+        </OutputConnections>
+    </GuiSettings>
+    <Properties>
+        <MetaInfo>
+            <Name>GroupedRecordIDJS</Name>
+            <Author>James Dunkerley</Author>
+            <Description>Macro creating a RecordID with Grouping and Sorting.</Description>
+            <CategoryName>Preparation</CategoryName>
+            <ToolVersion>1.0</ToolVersion>
+           <Icon>logo.png</Icon>
+        </MetaInfo>
+    </Properties>
+</AlteryxJavaScriptPlugin>

@@ -3,10 +3,10 @@
     <EngineSettings EngineDLL="Macro" EngineDLLEntryPoint="GroupedRecordIDJS/Supporting_Macros/GroupedRecordID.yxmc" SDKVersion="10.1"/>
     <GuiSettings Html="GroupedRecordIDGUI.html" Icon="logo.png" SDKVersion="10.1">
         <InputConnections>
-            <Connections Name="Input" AllowMultiple="False" Optional="False" Type="Connection"/>
+            <Connection Name="Input" AllowMultiple="False" Optional="False" Type="Connection"/>
         </InputConnections>
         <OutputConnections>
-            <Connections Name="Output7" AllowMultiple="False" Optional="" Type="Connection"/>
+            <Connection Name="Output7" AllowMultiple="False" Optional="" Type="Connection"/>
         </OutputConnections>
     </GuiSettings>
     <Properties>

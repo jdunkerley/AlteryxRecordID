@@ -4,7 +4,32 @@
  * @param AlteryxDataItems The data items in use on this page.
  * @param json Configuration
  */
-Alteryx.GUI.BeforeLoad = (manager, dataItems, json) => {
+Alteryx.Gui.BeforeLoad = (manager, AlteryxDataItems, json) => {
+  const dataFieldNameItem = new AlteryxDataItems.SimpleString('FieldName', {})
+  dataFieldNameItem.setValue('RecordID')
+  manager.addDataItem(dataFieldNameItem)
+  manager.bindDataItemToWidget(dataFieldNameItem, 'dataFieldName')
+
+  const dataLastColumnItem = new AlteryxDataItems.SimpleBool('LastColumn', {})
+  dataLastColumnItem.setValue(true)
+  manager.addDataItem(dataLastColumnItem)
+  manager.bindDataItemToWidget(dataLastColumnItem, 'dataLastColumn')
+
+  const dataFieldTypeItem = new AlteryxDataItems.StringSelector('FieldType', {
+    optionList: [
+      'Byte',
+      'Int16',
+      'Int32',
+      'Int64',
+      'String',
+      'WString',
+      'V_String',
+      'V_WString'
+    ].map(a => { return {label: a, value: a} })
+  })
+  dataFieldTypeItem.setValue('Int64')
+  manager.addDataItem(dataFieldTypeItem)
+  manager.bindDataItemToWidget(dataFieldTypeItem, 'dataFieldType')
 }
 
 /**
@@ -12,15 +37,15 @@ Alteryx.GUI.BeforeLoad = (manager, dataItems, json) => {
  * @param manager The data manager.
  * @param AlteryxDataItems The data items in use on this page.
  */
-Alteryx.GUI.AfterLoad = (manager, AlteryxDataItems) => {
+Alteryx.Gui.AfterLoad = (manager, AlteryxDataItems) => {
 }
 
 /**
  * Reformat the JSON to the style we need
  * @param json Configuration
  */
-Alteryx.GUI.BeforeGetConfiguration: (json) =>  {
-    return json
+Alteryx.Gui.BeforeGetConfiguration = (json) => {
+  return json
 }
 
 /**
@@ -28,4 +53,4 @@ Alteryx.GUI.BeforeGetConfiguration: (json) =>  {
  * @param manager The data manager.
  * @returns {string}
  */
-Alteryx.GUI.Annotation = (manager) => ""
+Alteryx.Gui.Annotation = (manager) => ''

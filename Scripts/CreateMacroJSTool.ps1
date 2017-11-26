@@ -8,7 +8,7 @@ function Add-Connection($node, $config) {
     if ($abbrev -ne "") {""
         $abbrev = " Label=""$abbrev"""
     }
-    Add-Content $config -Value "            <Connections Name=""$iname"" AllowMultiple=""False"" Optional=""$optional"" Type=""Connection""$abbrev/>"
+    Add-Content $config -Value "            <Connection Name=""$iname"" AllowMultiple=""False"" Optional=""$optional"" Type=""Connection""$abbrev/>"
 }
 
 function Write-MacroConfigAndImage($macroFile, $config) {
@@ -172,7 +172,7 @@ function Write-JSFile($macroName, $destination) {
  * @param AlteryxDataItems The data items in use on this page.
  * @param json Configuration
  */
-Alteryx.GUI.BeforeLoad = (manager, dataItems, json) => {
+Alteryx.GUI.BeforeLoad = (manager, AlteryxDataItems, json) => {
 }
 
 /**
@@ -187,8 +187,8 @@ Alteryx.GUI.AfterLoad = (manager, AlteryxDataItems) => {
  * Reformat the JSON to the style we need
  * @param json Configuration
  */
-Alteryx.GUI.BeforeGetConfiguration: (json) =>  {
-    return json
+Alteryx.GUI.BeforeGetConfiguration = (json) => {
+  return json
 }
 
 /**
@@ -196,7 +196,7 @@ Alteryx.GUI.BeforeGetConfiguration: (json) =>  {
  * @param manager The data manager.
  * @returns {string}
  */
-Alteryx.GUI.Annotation = (manager) => ""
+Alteryx.GUI.Annotation = (manager) => ''
 '@
 
     Set-Content -Path (Join-Path $destination "${macroName}GUI.js") ($content.Replace('[ToolName]', $macroName))

@@ -11,8 +11,6 @@
 <body>
     <form>
         <fieldset>
-            <legend>New Column</legend>
-
             <label for="dataFieldName">Field Name</label>
             <!-- <alteryx-pluginwidget data-props='{type:"TextBox",id:"dataFieldName",dataName:"FieldName",value:"RecordID"}'></alteryx-pluginwidget> -->
             <ayx data-ui-props='{type:"TextBox", widgetId:"dataFieldName"}'></ayx>
@@ -22,6 +20,21 @@
 
             <label for="dataFieldType">Field Type</label>
             <ayx data-ui-props='{type:"DropDown", widgetId:"dataFieldType"}'></ayx>
+
+            <label for="dataStringSize">String Size</label>
+            <ayx data-ui-props='{type:"NumericSpinner", widgetId:"dataStringSize"}'></ayx>
+
+            <label for="dataStartingValue">Initial Value</label>
+            <ayx data-ui-props='{type:"NumericSpinner", widgetId:"dataStartingValue"}'></ayx>
+
+            <label for="dataGroupingFields">Grouping Fields</label>
+            <ayx data-ui-props='{type:"ListBox", widgetId:"dataGroupingFields", searchable: false}'></ayx>
+
+            <label for="dataSortingFields">Sorting Fields</label>
+            <ayx data-ui-props='{type:"ListBox", widgetId:"dataSortingFields", searchable: false}'></ayx>
+
+            <label for="dataDescendingFields">Descending Fields</label>
+            <ayx data-ui-props='{type:"ListBox", widgetId:"dataDescendingFields", searchable: false}'></ayx>
         </fieldset>
 	</form>
     <script type="text/javascript" src="GroupedRecordIDGUI.js"></script>

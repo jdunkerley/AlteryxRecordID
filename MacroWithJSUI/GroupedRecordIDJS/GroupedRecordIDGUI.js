@@ -30,6 +30,37 @@ Alteryx.Gui.BeforeLoad = (manager, AlteryxDataItems, json) => {
   dataFieldTypeItem.setValue('Int64')
   manager.addDataItem(dataFieldTypeItem)
   manager.bindDataItemToWidget(dataFieldTypeItem, 'dataFieldType')
+
+  const dataStringSize = new AlteryxDataItems.ConstrainedInt('StringSize', {min: 1, max: 1073741823})
+  dataStringSize.setValue(5)
+  manager.addDataItem(dataStringSize)
+  manager.bindDataItemToWidget(dataStringSize, 'dataStringSize')
+
+  const dataStartingValue = new AlteryxDataItems.ConstrainedInt('StartingValue', {})
+  dataStartingValue.setValue(1)
+  manager.addDataItem(dataStartingValue)
+  manager.bindDataItemToWidget(dataStartingValue, 'dataStartingValue')
+
+  const dataGroupingFields = new AlteryxDataItems.FieldSelectorMulti('GroupingFields', {manager: manager, connectionIndex: 0, anchorIndex: 0, delimiter: '","'})
+  setJsonSerialiser(dataGroupingFields)
+  manager.addDataItem(dataGroupingFields)
+  manager.bindDataItemToWidget(dataGroupingFields, 'dataGroupingFields')
+
+  const dataSortingFields = new AlteryxDataItems.FieldSelectorMulti('SortingFields', {manager: manager, connectionIndex: 0, anchorIndex: 0, delimiter: '","'})
+  setJsonSerialiser(dataSortingFields)
+  manager.addDataItem(dataSortingFields)
+  manager.bindDataItemToWidget(dataSortingFields, 'dataSortingFields')
+
+  const dataDescendingFields = new AlteryxDataItems.FieldSelectorMulti('DescendingFields', {manager: manager, connectionIndex: 0, anchorIndex: 0, delimiter: '","'})
+  setJsonSerialiser(dataDescendingFields)
+  manager.addDataItem(dataDescendingFields)
+  manager.bindDataItemToWidget(dataDescendingFields, 'dataDescendingFields')
+}
+
+function setJsonSerialiser (item) {
+  const innerFn = item.fromJson
+  item.fromJson = (e, t, n) => (typeof n === 'string' && innerFn(e, t, n.replace(/(^")|("$)/g, '')))
+  item.toJson = (e, t) => e({ DataItem: `"${item.getValue().join(item.getDelimiter())}"`, DataName: item.getDataName() })
 }
 
 /**
